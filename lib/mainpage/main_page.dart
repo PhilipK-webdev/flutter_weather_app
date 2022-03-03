@@ -39,11 +39,6 @@ class MainPage extends StatelessWidget {
 
 
 
-
-
-
-
-
 // class InputSearchCity extends StatelessWidget {
 //   InputSearchCity(
 //       {Key? key, required this.handleSearch, required this.controllerName})

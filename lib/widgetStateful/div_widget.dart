@@ -1,6 +1,6 @@
 import 'dart:convert';
-
 import "package:flutter/material.dart";
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_auto_machine/widgetStateless/handler_submit.dart';
 import 'package:flutter_auto_machine/widgetStateless/input.dart';
 import 'package:flutter_auto_machine/widgetStateless/title.dart';
@@ -21,7 +21,7 @@ class _DivWidgetState extends State<DivWidget> {
   Map<String, dynamic> _map = {};
   Map<String, dynamic> forecast = {};
   List<dynamic> data = [];
-  final String _apiKey = "9896ef9948b9e627469b011deceaa07c";
+  final String _apiKey = env['API_KEY']!;
   String _name = '';
   String finalName = '';
   String latitude = '';

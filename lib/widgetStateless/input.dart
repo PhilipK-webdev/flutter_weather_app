@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auto_machine/mainpage/data.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Input extends StatelessWidget {
   Input({Key? key, required this.handleSearch, required this.controllerName})
       : super(key: key);
-  final String _apiKey = "9896ef9948b9e627469b011deceaa07c";
+  final String _apiKey = env['API_KEY']!;
   final ValueChanged<String> handleSearch;
   TextEditingController controllerName = TextEditingController();
   void _onSearch(value) {
