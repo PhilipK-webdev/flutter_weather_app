@@ -69,7 +69,7 @@ class _DivWidgetState extends State<DivWidget> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            TitleWidget(name: finalName),
+            TitleWidget(name: finalName, greeting: 'Welcome'),
             // InputSearchCity(
             //     handleSearch: _onChange, controllerName: nameHolder),
             Input(handleSearch: _onChange, controllerName: nameHolder),

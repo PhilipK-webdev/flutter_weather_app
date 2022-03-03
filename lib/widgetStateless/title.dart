@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
 class TitleWidget extends StatelessWidget {
-  TitleWidget({Key? key, required this.name}) : super(key: key);
+  TitleWidget({Key? key, required this.name, required this.greeting})
+      : super(key: key);
   String name;
+  String greeting;
   @override
   Widget build(BuildContext context) {
+    String nameForecast = 'Forecast';
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -18,14 +21,14 @@ class TitleWidget extends StatelessWidget {
           child: Center(
             child: name != ''
                 ? Text(
-                    'Forecast ${name}',
+                    '${nameForecast} ${name}',
                     style: const TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w800,
                         color: Color.fromRGBO(54, 78, 101, 1)),
                   )
-                : const Text(
-                    'Welcome',
+                : Text(
+                    '${greeting}',
                     style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w800,

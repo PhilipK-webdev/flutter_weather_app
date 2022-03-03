@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:flutter_auto_machine/widgetStateless/title.dart';
 
 class Favorite extends StatefulWidget {
   Favorite(
@@ -42,31 +43,38 @@ class _FavoriteState extends State<Favorite> {
               ),
             ),
             // body: Fa
-            body: Center(
-              child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: SizedBox(
-                  key: UniqueKey(),
-                  height: 600,
-                  width: 300,
-                  child: ListView.builder(
-                    shrinkWrap: true,
-                    itemBuilder: ((context, index) {
-                      return FavoriteCard(
-                          indexToDelete: widget.indexAndBoolean[index]['index'],
-                          init: widget.init,
-                          name:
-                              widget.indexAndBoolean[index]['name'].toString(),
-                          mapMainFavorite: widget.mapList[index]['list']
-                              [widget.indexAndBoolean[index]['index']]['main'],
-                          mapWeatherFavorite: widget.mapList[index]['list']
-                                  [widget.indexAndBoolean[index]['index']]
-                              ['weather'][0]);
-                    }),
-                    itemCount: widget.count,
+            body: Column(
+              children: [
+                TitleWidget(name: 'Favorite Page', greeting: ''),
+                Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: SizedBox(
+                      key: UniqueKey(),
+                      height: 450,
+                      width: 300,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemBuilder: ((context, index) {
+                          return FavoriteCard(
+                              indexToDelete: widget.indexAndBoolean[index]
+                                  ['index'],
+                              init: widget.init,
+                              name: widget.indexAndBoolean[index]['name']
+                                  .toString(),
+                              mapMainFavorite: widget.mapList[index]['list']
+                                      [widget.indexAndBoolean[index]['index']]
+                                  ['main'],
+                              mapWeatherFavorite: widget.mapList[index]['list']
+                                      [widget.indexAndBoolean[index]['index']]
+                                  ['weather'][0]);
+                        }),
+                        itemCount: widget.count,
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
             )));
   }
 }

@@ -6,6 +6,3 @@ Future main() async {
   await DotEnv.load(fileName: ".env");
   runApp(const MainPage());
 }
-// void main() {
- 
-// }
